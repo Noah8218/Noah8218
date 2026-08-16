@@ -1,71 +1,180 @@
 <div align="center">
 
-# Noah Choi (최노아)
+# Noah Choi
 
-### Machine Vision Software Engineer · C# / .NET / WPF
+### Industrial Machine Vision Software Engineer
 
-**2D/3D Inspection · Semiconductor Inspection · Automation Equipment · Vision Developer Tools**
+**C# · .NET · WPF · 2D/3D Vision · Automation Equipment · Developer Tools**
 
 [![GitHub](https://img.shields.io/badge/GitHub-Noah8218-181717?style=flat-square&logo=github)](https://github.com/Noah8218)
 [![Email](https://img.shields.io/badge/Email-dhqtlzm12%40naver.com-03C75A?style=flat-square)](mailto:dhqtlzm12@naver.com)
 [![Raw Buffer Visualizer](https://img.shields.io/visual-studio-marketplace/v/openvisionlab.RawBufferVisualizer?label=Raw%20Buffer%20Visualizer&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=openvisionlab.RawBufferVisualizer)
 
+**Building open-source tools for machine-vision development before the physical machine is ready.**
+
 </div>
 
 ---
 
-## About Me
+## About
 
-I am a **C#-based industrial machine-vision software engineer** focused on software that must run reliably on real automation equipment.
+I am an industrial machine-vision software engineer with **8 years of experience across 20+ equipment projects** in semiconductor, display, battery, and automotive manufacturing.
 
-My work spans the full inspection workflow: **2D/3D vision, image processing and inspection algorithms, camera/light/motion/PLC integration, inspection sequences, result storage, logging, database integration, performance tuning, and field stabilization**.
+My professional work covers the complete equipment-software lifecycle: requirements, software architecture, inspection implementation, equipment integration, validation, production deployment, and field stabilization.
 
-I care especially about the parts that become critical in long-running equipment software: **deterministic state transitions, callback and thread safety, image-buffer lifetime, timeout/recovery paths, traceability, reproducibility, and diagnostics**.
+My personal R&D focuses on a recurring problem I have seen in real equipment development:
 
-> 산업용 머신비전과 자동화 설비를 위한 C#/.NET 소프트웨어를 개발합니다.  
-> 알고리즘 구현뿐 아니라 장비에서 오래 안정적으로 동작하고, 문제가 발생했을 때 원인을 추적하고 복구할 수 있는 소프트웨어를 지향합니다.
+> **When software development starts only after the machine and samples are ready, validation risk is concentrated near the end of the schedule.**
+
+I am building **OpenVisionLab** to move more of that work earlier by connecting virtual equipment, image data, inspection software, reusable algorithms, and validation workflows.
 
 ---
 
-## OpenVisionLab
+# OpenVisionLab
 
-**OpenVisionLab** is my open-source ecosystem for C# machine-vision developers.
+**OpenVisionLab is my personal open-source R&D ecosystem for C# machine-vision developers.**
 
-The goal is to make it easier to **build, debug, validate, label, and simulate machine-vision workflows even when physical equipment is not immediately available**.
-
-| Project | What it does | Status |
-| --- | --- | --- |
-| **[OpenVisionLab](https://github.com/Noah8218/OpenVisionLab)** | OpenCvSharp-based rule vision workbench for Layers, Tools, Pipelines, Recipes, Preview/Run, and Good/Bad validation | Public · Active |
-| **[Raw Buffer Visualizer](https://github.com/Noah8218/RawBufferVisualizer)** | Visual Studio debugger tool for `Bitmap`, OpenCvSharp/Emgu `Mat`, `IntPtr`, raw buffers, camera wrappers, stride/format diagnostics, and image comparison | Public · Marketplace |
-| **[OpenVisionLab Vision SDK](https://github.com/Noah8218/OpenVisionLab-Vision-SDK)** | UI-independent C# SDK for 2D inspection and height-map/full-XYZ 3D computation | Public |
-| **[OpenVisionLab Labeling Studio](https://github.com/Noah8218/OpenVisionLab-Labeling-Studio)** | Windows workbench for object detection, segmentation, anomaly labeling, dataset management, training, validation, and model comparison | Public |
-| **[OpenVisionLab 3D Studio](https://github.com/Noah8218/OpenVisionLab-3D-Studio)** | Rule-based 3D inspection workbench for height data, meshes, point clouds, ROI teaching, measurement, validation, and recipe replay | Public · Active |
-| **OpenVisionLab Machine Studio** | Virtual-commissioning and equipment-simulation workbench for axes, I/O, devices, sequences, faults, conveyors, sensors, and virtual-camera workflows | In development |
-
-### Ecosystem Direction
+The long-term goal is to provide a reusable environment where small vision teams and individual developers can design, implement, debug, and validate inspection software even when access to production equipment is limited.
 
 ```text
-Machine / Camera / Raw Buffer
-        │
-        ├── Raw Buffer Visualizer      → Debug buffers inside Visual Studio
-        │
-        ├── OpenVisionLab              → Build and validate 2D rule inspections
-        │       └── Vision SDK         → Reusable 2D/3D inspection algorithms
-        │
-        ├── Labeling Studio            → Build datasets and validate AI models
-        │
-        ├── 3D Studio                  → Teach and validate 3D inspection recipes
-        │
-        └── Machine Studio             → Simulate equipment behavior before hardware is ready
+OpenVisionLab
+│
+├── OpenVisionLab 2D Workbench
+│   └── Rule-based 2D inspection, Layers, Tools, Pipelines, Recipes, validation
+│
+├── OpenVisionLab Vision SDK
+│   └── Shared 2D/3D inspection algorithms, geometry, coordinates, and result contracts
+│
+├── OpenVisionLab Labeling Studio
+│   └── AI datasets, labeling, training workflows, model validation and comparison
+│
+├── OpenVisionLab 3D Studio
+│   └── 3D teaching, Height Map / XYZ inspection, Thickness, Warpage, recipe validation
+│
+└── OpenVisionLab Machine Studio
+    └── Virtual equipment, Sequence, Axis, I/O, Sensor, Fault, Camera, inspection integration
 ```
+
+## Project Family
+
+### [OpenVisionLab — 2D Inspection Workbench](https://github.com/Noah8218/OpenVisionLab)
+
+A Windows desktop workbench for building and validating **rule-based 2D machine-vision inspections** with OpenCvSharp.
+
+- Layer-based image workflow
+- Threshold, Filter, Morphology, Blob, Contour, Matching, Line and measurement tools
+- Ordered inspection Pipelines and reusable Recipes
+- Intermediate-image review and explicit Preview / Run behavior
+- Good / Bad sample validation
+- Public sample workflows designed for reproducibility
+
+**Status:** Public · Active development · Public sample validation
 
 ---
 
-## Featured Project — Raw Buffer Visualizer
+### [OpenVisionLab Vision SDK](https://github.com/Noah8218/OpenVisionLab-Vision-SDK)
 
-**Image Watch-style debugging for C# and OpenCvSharp machine vision.**
+The shared inspection core behind the OpenVisionLab project family.
 
-Instead of repeatedly saving temporary images or writing debug-only conversion code, Raw Buffer Visualizer lets developers inspect image variables directly while stopped at a breakpoint.
+- UI-independent C# inspection libraries
+- 2D image-processing and inspection algorithms
+- Height-map and full-XYZ 3D computation
+- Thickness, Warpage, Flatness, Gap/Flush, Volume and geometry operations
+- Shared coordinate, measurement, result and data contracts
+- Designed so UI applications can reuse the same inspection logic without duplicating algorithms
+
+**Status:** SDK 3.0 source public · Used by OpenVisionLab
+
+---
+
+### [OpenVisionLab Labeling Studio](https://github.com/Noah8218/OpenVisionLab-Labeling-Studio)
+
+A Windows desktop workbench for building and validating machine-vision AI datasets.
+
+- Object detection, segmentation and anomaly labeling
+- Dataset versioning and validation
+- Training workflow integration
+- Candidate-model review and comparison
+- Shared ground-truth data across supported model adapters
+- Explicit separation between labels, AI candidates and adopted inspection models
+
+**Status:** Public · Core workflow implemented
+
+---
+
+### [OpenVisionLab 3D Studio](https://github.com/Noah8218/OpenVisionLab-3D-Studio)
+
+A rule-based 3D inspection workbench for teaching, measurement, validation and recipe replay.
+
+- Height Map, mesh and point-cloud workflows
+- ROI teaching and inspection-step configuration
+- Thickness and Warpage inspection
+- Plane, gap, flush, volume and geometry measurements
+- Preview, Publish, Run and validation workflows
+- Repeatable recipe and evidence review
+
+**Status:** Public · Thickness / Warpage validation in progress
+
+---
+
+### OpenVisionLab Machine Studio
+
+A virtual-commissioning workbench for validating equipment behavior before physical equipment is available.
+
+Current implementation includes:
+
+- Equipment layout, Sequence and Recipe concepts
+- Axis, I/O, Sensor and deterministic simulation
+- Automatic cycle execution
+- Fault Injection and timeout/recovery scenarios
+- Virtual Camera and Image Source timing
+- Inspection Cell concepts for connecting vision software
+
+The next integration stage connects the OpenVisionLab project family so simulated camera acquisition can drive 2D, 3D and AI inspection workflows and return inspection results to the equipment sequence.
+
+**Status:** Core simulation implemented · Inspection integration in progress
+
+---
+
+## OpenVisionLab Direction
+
+```text
+Equipment Concept / Process Design
+            │
+            ▼
+     Machine Studio
+  Sequence · Axis · I/O · Fault
+            │
+            ▼
+ Virtual Camera / Image Source
+            │
+     ┌──────┼─────────────┐
+     ▼      ▼             ▼
+ 2D Vision  3D Vision     AI Data / Validation
+OpenVision  3D Studio     Labeling Studio
+     │      │             │
+     └──────┴──────┬──────┘
+                   ▼
+          OpenVisionLab Vision SDK
+                   │
+                   ▼
+       Inspection Result / Metrics
+                   │
+                   ▼
+         Sequence Decision / Replay
+```
+
+The purpose is not to replace real equipment validation. It is to **move architecture, sequence, inspection, failure-mode and integration verification earlier**, so physical-machine time can be used for the things that truly require hardware, optics and production samples.
+
+---
+
+# Raw Buffer Visualizer
+
+### [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=openvisionlab.RawBufferVisualizer) · [GitHub](https://github.com/Noah8218/RawBufferVisualizer)
+
+**Raw Buffer Visualizer** is a separate developer tool created from the debugging problems I repeatedly encountered while developing C# machine-vision software.
+
+Instead of saving temporary images or writing debug-only conversion code, it allows image and raw-buffer variables to be inspected directly while stopped at a breakpoint in Visual Studio.
 
 [![Marketplace](https://img.shields.io/visual-studio-marketplace/v/openvisionlab.RawBufferVisualizer?label=Marketplace&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=openvisionlab.RawBufferVisualizer)
 [![Marketplace installs](https://img.shields.io/visual-studio-marketplace/i/openvisionlab.RawBufferVisualizer?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=openvisionlab.RawBufferVisualizer)
@@ -73,62 +182,76 @@ Instead of repeatedly saving temporary images or writing debug-only conversion c
 
 Key areas include:
 
-- `System.Drawing.Bitmap`, OpenCvSharp `Mat`, Emgu CV `Mat`, `IntPtr`, and raw-buffer inspection
-- Automatic inspection of supported image-like locals and arguments
-- Buffer interpretation diagnostics for stride, pixel format, valid bits, and byte order
-- A/B comparison, diff, blink, linked pan/zoom, line profile, histogram, and pixel inspection
-- Large-image handling and fail-closed validation for unsafe or inconsistent buffer metadata
+- `System.Drawing.Bitmap`, OpenCvSharp `Mat`, Emgu CV `Mat`, `IntPtr` and raw buffers
+- Debugger visualizers and automatic image-like object inspection
+- Stride, pixel-format, valid-bit and byte-order diagnostics
+- Buffer interpretation recovery for incorrectly described raw images
+- Pixel inspection, histogram, line profile and image comparison
+- A/B, split, diff, blink and linked pan/zoom workflows
+- Large-image handling and fail-closed buffer validation
+
+**Status:** Marketplace release · v2.0.2
 
 ---
 
-## Engineering Focus
+## Experience Behind the Projects
 
-- **Industrial Machine Vision** — 2D/3D inspection, image processing, measurement, matching, defect detection
-- **Equipment Software** — inspection sequences, motion/PLC/camera/light integration, state management, timeout and recovery
-- **C# Desktop** — WPF, WinForms, MVVM, async/multithreading, long-running application stability
-- **Image Memory & Performance** — `Bitmap`, `BitmapSource`, OpenCvSharp `Mat`, `IntPtr`, camera callbacks, large-image ownership and lifetime
-- **Traceability** — structured logs, inspection results, database/file persistence, reproducible diagnostics
-- **Developer Tooling** — Visual Studio extensions, reusable vision SDKs, offline-capable engineering tools
+These personal projects are based on problems I have handled in production machine-vision systems rather than isolated demo applications.
+
+### Machine Vision
+
+- 2D: Edge, Blob, Contour, Pattern Matching, Line Gauge and measurement
+- 3D: Height Map, Full XYZ, Thickness and Warpage
+- Image coordinate conversion, defect merging and inspection-result processing
+- Area Scan and Line Scan camera workflows
+
+### Equipment Software
+
+- Camera, lighting, I/O, sensor, PLC and motion integration
+- Inspection Sequence and Recipe architecture
+- TOP / BTM independent processing and multi-worker execution
+- Timeout, recovery and delayed-callback isolation
+- Long-running equipment-state and error-handling design
+
+### Performance & Interop
+
+- C++ DLL / C++/CLI / C# interoperability
+- Large unmanaged image buffers
+- Multi-threaded inspection queues
+- Rule / AI inspection-module integration
+- Native / managed boundary design
+
+### Desktop & Tooling
+
+- C# / .NET
+- WPF / WinForms
+- OpenCvSharp
+- Visual Studio extensions
+- Git / SVN / Jenkins / GitHub Actions
 
 ---
 
-## Tech Stack
-
-<p>
-  <img src="https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt="C#" />
-  <img src="https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt=".NET" />
-  <img src="https://img.shields.io/badge/WPF-0C54C2?style=flat-square&logo=windows&logoColor=white" alt="WPF" />
-  <img src="https://img.shields.io/badge/WinForms-0C54C2?style=flat-square&logo=windows&logoColor=white" alt="WinForms" />
-  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" alt="OpenCV" />
-  <img src="https://img.shields.io/badge/OpenCvSharp-5C3EE8?style=flat-square&logo=opencv&logoColor=white" alt="OpenCvSharp" />
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/Visual%20Studio-5C2D91?style=flat-square&logo=visualstudio&logoColor=white" alt="Visual Studio" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
-  <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions" />
-</p>
-
----
-
-## What I Value in Vision Software
+## Engineering Principles
 
 ```text
-Correct inspection
-    + predictable equipment behavior
-    + safe image/buffer ownership
-    + recoverable failures
-    + useful logs and traceability
-    + repeatable validation
-    = software that can survive the production floor
+Build earlier.
+Validate explicitly.
+Keep state deterministic.
+Fail safely.
+Preserve evidence.
+Make problems reproducible.
 ```
 
-I prefer practical engineering improvements that make a system **more stable, easier to diagnose, and easier to reproduce** over adding technology only for novelty.
+I prefer engineering that improves **stability, traceability, recovery and reproducibility** over adding complexity only for novelty.
+
+For machine-vision software, an algorithm producing the right result once is not enough. The complete system must acquire the correct image, execute the correct inspection at the correct time, preserve the result, recover from failure, and provide enough evidence to explain what happened later.
 
 ---
 
 <div align="center">
 
-### Building practical machine-vision tools for C# developers.
+### Open-source machine-vision tools built from production equipment experience.
 
-**Machine Vision · Automation · Inspection · Developer Tools**
+**C# · .NET · Machine Vision · Automation · 2D/3D Inspection · Developer Tools**
 
 </div>
