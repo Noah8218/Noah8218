@@ -38,8 +38,8 @@ The long-term goal is to provide a reusable environment where small vision teams
 
 <p align="center">
   <img
-    src="./assets/openvisionlab-ecosystem-en.svg"
-    alt="OpenVisionLab personal R&D ecosystem"
+    src="./assets/openvisionlab-ecosystem-en-optimized.png"
+    alt="OpenVisionLab personal R&D ecosystem built with actual application UI"
     width="100%"
   />
 </p>
