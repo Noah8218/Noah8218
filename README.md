@@ -36,24 +36,13 @@ I am building **OpenVisionLab** to move more of that work earlier by connecting 
 
 The long-term goal is to provide a reusable environment where small vision teams and individual developers can design, implement, debug, and validate inspection software even when access to production equipment is limited.
 
-```text
-OpenVisionLab
-│
-├── OpenVisionLab 2D Workbench
-│   └── Rule-based 2D inspection, Layers, Tools, Pipelines, Recipes, validation
-│
-├── OpenVisionLab Vision SDK
-│   └── Shared 2D/3D inspection algorithms, geometry, coordinates, and result contracts
-│
-├── OpenVisionLab Labeling Studio
-│   └── AI datasets, labeling, training workflows, model validation and comparison
-│
-├── OpenVisionLab 3D Studio
-│   └── 3D teaching, Height Map / XYZ inspection, Thickness, Warpage, recipe validation
-│
-└── OpenVisionLab Machine Studio
-    └── Virtual equipment, Sequence, Axis, I/O, Sensor, Fault, Camera, inspection integration
-```
+<p align="center">
+  <img
+    src="./assets/openvisionlab-ecosystem-en.svg"
+    alt="OpenVisionLab personal R&D ecosystem"
+    width="100%"
+  />
+</p>
 
 ## Project Family
 
