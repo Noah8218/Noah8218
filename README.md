@@ -36,10 +36,6 @@ I am building **OpenVisionLab** to move more of that work earlier by connecting 
 
 The long-term goal is to provide a reusable environment where small vision teams and individual developers can design, implement, debug, and validate inspection software even when access to production equipment is limited.
 
-<p align="center">
-  <img src="./assets/openvisionlab-ecosystem-en.webp" alt="OpenVisionLab personal R&D ecosystem built with actual application UI" width="100%" />
-</p>
-
 ## Project Family
 
 ### [OpenVisionLab — 2D Inspection Workbench](https://github.com/Noah8218/OpenVisionLab)
