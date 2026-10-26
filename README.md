@@ -55,8 +55,7 @@
   </tr>
   <tr>
     <td width="360" valign="top">
-      <a href="https://github.com/Noah8218/OpenVisionLab-3D-Studio"><img src="assets/3d-studio-viewer-orbit.gif" alt="3D surface rotation from product-exported Viewer frames" width="360"></a>
-      <p><sub>Actual frames exported by the maximized 3D viewer.</sub></p>
+      <a href="https://github.com/Noah8218/OpenVisionLab-3D-Studio"><img src="https://raw.githubusercontent.com/Noah8218/OpenVisionLab-3D-Studio/main/docs/assets/openvisionlab-3d-texture-workflow.gif" alt="3D Studio inspection workbench" width="360"></a>
     </td>
     <td valign="top">
       <h3><a href="https://github.com/Noah8218/OpenVisionLab-3D-Studio">3D Studio</a></h3>
@@ -84,8 +83,7 @@
   </tr>
   <tr>
     <td width="360" valign="top">
-      <a href="https://github.com/Noah8218/OpenVisionLab-Vision-SDK"><img src="https://raw.githubusercontent.com/Noah8218/OpenVisionLab-Vision-SDK/main/docs/images/matching_detection_result.png" alt="Synthetic template-matching output from the Vision SDK" width="360"></a>
-      <p><sub>Synthetic algorithm output.</sub></p>
+      <a href="https://github.com/Noah8218/OpenVisionLab-Vision-SDK"><img src="https://raw.githubusercontent.com/Noah8218/OpenVisionLab-Vision-SDK/main/docs/images/matching_detection_result.png" alt="Template-matching results" width="360"></a>
     </td>
     <td valign="top">
       <h3><a href="https://github.com/Noah8218/OpenVisionLab-Vision-SDK">Vision SDK</a></h3>
