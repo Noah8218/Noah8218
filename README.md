@@ -113,9 +113,13 @@
 
 ## What's new
 
-- **2026-10-26 · [Labeling Studio](https://github.com/Noah8218/OpenVisionLab-Labeling-Studio/blob/main/RELEASE_NOTES.md):** Reorganized the README around supported tasks and workflows, with updated labeling examples and Smart Mask clips.
-- **2026-10-18 · [2D Workbench](https://github.com/Noah8218/OpenVisionLab/blob/main/CHANGELOG.md):** Adjusted Korean introduction and recipe instructions after a narrow-width README review.
-- **2026-10-16 · [3D Studio](https://github.com/Noah8218/OpenVisionLab-3D-Studio/blob/main/CHANGELOG.md):** Reorganized recipe teaching and result recovery, and added aligned appearance images on C3D surfaces.
+<!-- Keep at most three dated, user-facing milestones. Verify dates and versions in the linked project history; keep detailed changes there. -->
+
+| Date | Milestone |
+| --- | --- |
+| 2026-10-26 | **Labeling Studio 0.3.7:** Refreshed labeling workflows and Smart Mask examples. [Release notes](https://github.com/Noah8218/OpenVisionLab-Labeling-Studio/blob/main/RELEASE_NOTES.md) |
+| 2026-10-17 | **2D Workbench 2.2.0-dev.8:** Smoother Recipe transitions, tool editing and inspection-result review. [Changelog](https://github.com/Noah8218/OpenVisionLab/blob/main/CHANGELOG.md) |
+| 2026-10-16 | **3D Studio 0.7.0-dev:** Reworked recipe teaching and result recovery; added C3D appearance overlays. [Changelog](https://github.com/Noah8218/OpenVisionLab-3D-Studio/blob/main/CHANGELOG.md) |
 
 ## Roadmap
 
@@ -137,30 +141,32 @@ I am building it to connect virtual equipment, image data, inspection software, 
 <details>
 <summary>OpenVisionLab Direction</summary>
 
-```text
-Equipment Concept / Process Design
-            │
-            ▼
-     Machine Studio
-  Sequence · Axis · I/O · Fault
-            │
-            ▼
- Virtual Camera / Image Source
-            │
-     ┌──────┼─────────────┐
-     ▼      ▼             ▼
- 2D Vision  3D Vision     AI Data / Validation
-OpenVision  3D Studio     Labeling Studio
-     │      │             │
-     └──────┴──────┬──────┘
-                   ▼
-          OpenVisionLab Vision SDK
-                   │
-                   ▼
-       Inspection Result / Metrics
-                   │
-                   ▼
-         Sequence Decision / Replay
+Solid arrows show available workflows or SDK reuse. Dashed arrows mark direct cross-project integration still in development.
+
+```mermaid
+flowchart TD
+    concept["Equipment concept<br/>and process design"]
+    machine["Machine Studio<br/>Sequence, axis, I/O, fault"]
+    inputs["Virtual camera<br/>and image inputs"]
+    sdk["Vision SDK<br/>Shared inspection algorithms"]
+    twoD["2D Workbench"]
+    threeD["3D Studio"]
+    labeling["Labeling Studio<br/>Data, training, inference"]
+    results["Inspection results<br/>and metrics"]
+    decision["Machine sequence<br/>decision and replay"]
+
+    concept --> machine
+    machine --> inputs
+    inputs -.-> twoD
+    inputs -.-> threeD
+    inputs -.-> labeling
+    sdk --> twoD
+    sdk --> threeD
+    sdk --> labeling
+    twoD --> results
+    threeD --> results
+    labeling --> results
+    results -.-> decision
 ```
 
 The purpose is not to replace real equipment validation. It is to **move architecture, sequence, inspection, failure-mode and integration verification earlier**, so physical-machine time can be used for the things that truly require hardware, optics and production samples.
