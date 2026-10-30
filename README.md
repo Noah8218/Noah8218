@@ -55,7 +55,7 @@
   </tr>
   <tr>
     <td width="360" valign="top">
-      <a href="https://github.com/Noah8218/OpenVisionLab-3D-Studio"><img src="https://raw.githubusercontent.com/Noah8218/OpenVisionLab-3D-Studio/main/docs/assets/openvisionlab-3d-texture-workflow.gif" alt="3D Studio inspection workbench" width="360"></a>
+      <a href="https://github.com/Noah8218/OpenVisionLab-3D-Studio"><img src="https://raw.githubusercontent.com/Noah8218/OpenVisionLab-3D-Studio/main/docs/assets/openvisionlab-3d-linked-inspection.gif" alt="Measure warpage, compensate the height map and inspect thickness" width="360"></a>
     </td>
     <td valign="top">
       <h3><a href="https://github.com/Noah8218/OpenVisionLab-3D-Studio">3D Studio</a></h3>
