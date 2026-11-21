@@ -117,7 +117,7 @@
 
 | Project | Latest version | What changed |
 | --- | --- | --- |
-| **Labeling Studio** | 0.4.2 | Added an edge inference runtime for GPU inspection: TensorRT engines, CPU and rule fallbacks, monitoring and alerts, and safe model replacement with rollback. [Release notes](https://github.com/Noah8218/OpenVisionLab-Labeling-Studio/blob/main/RELEASE_NOTES.md) |
+| **Labeling Studio** | 0.4.3 | Added multi-model training: several YOLOv8/YOLO11 models train in one queue, are evaluated on the test split automatically, and are compared side by side before one is set as the inspection model. [Release notes](https://github.com/Noah8218/OpenVisionLab-Labeling-Studio/blob/main/RELEASE_NOTES.md) |
 | **2D Workbench** | 2.2.0-dev.12 | Learn windows follow the selected theme, more editors are localized, and threshold settings stay consistent across text, sliders and saved Recipes. [Changelog](https://github.com/Noah8218/OpenVisionLab/blob/main/CHANGELOG.md) |
 | **3D Studio** | 0.8.1-dev | Added nine-point surface compensation for Warpage and Thickness, and improved cancellation and stale-result handling. [Changelog](https://github.com/Noah8218/OpenVisionLab-3D-Studio/blob/main/CHANGELOG.md) |
 
