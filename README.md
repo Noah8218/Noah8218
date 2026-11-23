@@ -119,7 +119,7 @@
 | --- | --- | --- |
 | **Labeling Studio** | 0.4.4 | Ran the full workflow on real PCB images (VisA PCB4): labels imported, YOLOv8n and YOLO11n trained and compared in the app, and TensorRT engines built with the edge runtime. Label import now keeps the chosen split. [Release notes](https://github.com/Noah8218/OpenVisionLab-Labeling-Studio/blob/main/RELEASE_NOTES.md) |
 | **2D Workbench** | 2.2.0-dev.12 | Learn windows follow the selected theme, more editors are localized, and threshold settings stay consistent across text, sliders and saved Recipes. [Changelog](https://github.com/Noah8218/OpenVisionLab/blob/main/CHANGELOG.md) |
-| **3D Studio** | 0.8.2-dev | Reports validation with no expected decisions separately from matched results, clarifies Tool Lab input and result displays, and uses neutral gray surfaces with plainer wording. [Changelog](https://github.com/Noah8218/OpenVisionLab-3D-Studio/blob/main/CHANGELOG.md) |
+| **3D Studio** | 0.8.2-dev | Adds an optional reference-surface RMS limit to Thickness, bulk expected results and named failure causes in Validation, and faster workspace tab switching. Reports validation with no expected decisions separately from matched results, clarifies Tool Lab displays, and uses neutral gray surfaces with plainer wording. [Changelog](https://github.com/Noah8218/OpenVisionLab-3D-Studio/blob/main/CHANGELOG.md) |
 
 ## Roadmap
 
