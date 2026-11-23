@@ -55,7 +55,7 @@
   </tr>
   <tr>
     <td width="360" valign="top">
-      <a href="https://github.com/Noah8218/OpenVisionLab-3D-Studio"><img src="https://raw.githubusercontent.com/Noah8218/OpenVisionLab-3D-Studio/main/docs/assets/openvisionlab-3d-linked-inspection.gif" alt="Measure warpage, compensate the height map and inspect thickness" width="360"></a>
+      <a href="https://github.com/Noah8218/OpenVisionLab-3D-Studio"><img src="https://raw.githubusercontent.com/Noah8218/Noah8218/main/assets/openvisionlab-3d-pcb-lot-inspection-en.gif" alt="Inspecting eight synthetic PCB scans with one recipe: five pass, three fail with the failing value and limit" width="360"></a>
     </td>
     <td valign="top">
       <h3><a href="https://github.com/Noah8218/OpenVisionLab-3D-Studio">3D Studio</a></h3>
