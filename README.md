@@ -220,13 +220,13 @@ Build earlier.
 Validate explicitly.
 Keep state deterministic.
 Fail safely.
-Preserve evidence.
+Preserve records.
 Make problems reproducible.
 ```
 
 I prefer engineering that improves **stability, traceability, recovery and reproducibility** over adding complexity only for novelty.
 
-For machine-vision software, an algorithm producing the right result once is not enough. The complete system must acquire the correct image, execute the correct inspection at the correct time, preserve the result, recover from failure, and provide enough evidence to explain what happened later.
+For machine-vision software, an algorithm producing the right result once is not enough. The complete system must acquire the correct image, execute the correct inspection at the correct time, preserve the result, recover from failure, and provide enough records to explain what happened later.
 
 </details>
 
